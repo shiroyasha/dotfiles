@@ -254,3 +254,5 @@ set foldlevelstart=99
 
 nnoremap <leader>v :vsplit<cr>
 nnoremap <leader>h :split<cr>
+
+set background=dark
