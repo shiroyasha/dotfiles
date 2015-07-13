@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files=( "tmux.conf" )
+files=( "tmux.conf" "vimrc" "gitconfig" )
 
 for file in "${files[@]}"
 do
