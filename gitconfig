@@ -1,42 +1,27 @@
 [user]
-	email = igisar@gmail.com
-	name = Igor Sarcevic
-
+  email = igor@renderedtext.com
+  name = Igor Šarčević
 [push]
-	default = simple
+  default = current
+[alias]
+  a     = add
+  all   = add -A
+  st    = status -sb
+  ci    = commit
+  ca    = commit --amend
+  br    = branch
+  co    = checkout
+  df    = diff
+  dfc   = diff --cached
+  lg    = log --pretty=format:'%C(yellow)%h%Creset %Cgreen(%><(12)%cr%><|(12))%Creset - %s %C(blue)<%an>%Creset'
+  pl    = pull
+  ps    = push
+  undo  = reset --soft HEAD^
+  count = !git shortlog -sne
+  up    = !git checkout master && git pull && git checkout -
+  purge = !git checkout master && git branch | grep -v "master" | xargs git branch -D
 
 [color]
-  ui = auto
-[color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
-[color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
-[color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
-
-[alias]
-  a = add
-  st = status -sb
-  ci = commit
-  ca = commit --amend
-  br = branch
-  co = checkout
-  df = diff
-  dfc = diff --cached
-  lg = log -p
-  who = shortlog -s --
-  pl = pull
-  ps = push
-  lol = log --graph --decorate --pretty=oneline --abbrev-commit
-  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-  ls = ls-files
-  last = describe --abbrev=0 --tags
-  rpo = remote prune origin
-  rso = remote show origin
+  diff   = auto
+  status = auto
+  branch = auto
