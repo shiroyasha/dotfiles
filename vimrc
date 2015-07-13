@@ -10,6 +10,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+" Define '\' as map leader
+let mapleader = '\'
+let g:mapleader = '\'
+
 Plugin 'gmarik/vundle'
 Plugin 'shiroyasha/vim-sane-defaults'
 Plugin 'tpope/vim-rails'
@@ -43,10 +47,6 @@ filetype plugin indent on    " required
 
 " CTRL P
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)|deps|_build|vendor$'
-
-" Define '\' as map leader
-let mapleader = '\'
-let g:mapleader = '\'
 
 " Ack vim
 let g:ackprg="ack-grep -H --nocolor --nogroup --column --ignore-dir={vendor,.git}"
