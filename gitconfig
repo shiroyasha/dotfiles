@@ -1,8 +1,10 @@
 [user]
   email = igor@renderedtext.com
   name = Igor Šarčević
+
 [push]
   default = current
+
 [alias]
   a     = add
   all   = add -A
@@ -25,3 +27,7 @@
   diff   = auto
   status = auto
   branch = auto
+
+[core]
+  editor = vim
+

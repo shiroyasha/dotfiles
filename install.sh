@@ -14,3 +14,6 @@ do
 
   echo -e "$file: \033[32mDone.\033[0m\n"
 done
+
+echo "Creating bin directory"
+mkdir -p "$HOME/bin"
