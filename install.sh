@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files=( "tmux.conf" "vimrc" "gitconfig" )
+files=( "tmux.conf" "vimrc" "gitconfig" "aliases")
 
 for file in "${files[@]}"
 do
@@ -17,3 +17,6 @@ done
 
 echo "Creating bin directory"
 mkdir -p "$HOME/bin"
+
+echo ""
+echo "Done."
