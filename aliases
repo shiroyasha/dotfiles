@@ -1,3 +1,4 @@
 alias be="bundle exec"
 alias bi="bundle install --path vendor/bundle"
 alias pewpew="bundle exec rake db:migrate db:test:prepare"
+alias gcaps="g a . && git ca && g ps -f"
