@@ -20,3 +20,11 @@ mkdir -p "$HOME/bin"
 
 echo ""
 echo "Done."
+
+# -----------------------
+echo "Downloading 'gh-pr'"
+
+curl -L "https://raw.githubusercontent.com/rastasheep/dotfiles/master/bin/gh-pr" -o ~/bin/gh-pr
+chmod +x ~/bin/gh-pr
+
+echo "Done."
