@@ -47,6 +47,9 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)|deps|_build|vendor$'
 " Ack vim
 let g:ackprg="ack-grep -H --nocolor --nogroup --column --ignore-dir={vendor,.git}"
 
+" Search word under cursor
+nnoremap K :Ack "\b<cword>\b"<CR>
+
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 
