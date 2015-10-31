@@ -1,5 +1,8 @@
 #!/bin/bash
 
+mkdir -p ~/bin
+mkdir -p ~/code
+
 files=( "tmux.conf" "vimrc" "gitconfig" "aliases")
 
 for file in "${files[@]}"
