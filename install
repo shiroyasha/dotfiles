@@ -1,0 +1,71 @@
+#!/usr/bin/env ruby
+
+$dotfiles = [
+  "tmux.conf",
+  "vimrc",
+  "gitconfig",
+  "aliases"
+]
+
+def create_base_dirs
+  `mkdir -p ~/bin`
+  `mkdir -p ~/code`
+end
+
+def checkmark
+  "\e[32m✓\e[0m"
+end
+
+def xmark
+  "\e[31m✗\e[0m"
+end
+
+def action(title, command)
+  print title
+
+  `#{command}`
+
+  mark = $?.exitstatus == 0 ? checkmark : xmark
+
+  puts " #{mark}"
+end
+
+def backup
+  file_paths = $dotfiles.map { |file| "~/.#{file}" } .select { |file| `test -f #{file}` && $?.exitstatus == 0 }
+
+  file_paths.each do |file|
+    action "Creating backup #{file}.backup", "mv #{file} #{file}.backup"
+  end
+end
+
+def script_path
+  File.dirname(__FILE__)
+end
+
+def update_dotfiles
+  path_pairs = $dotfiles.map { |file| ["#{script_path}/#{file}", "~/.#{file}"] }
+
+  path_pairs.each do |(local_path, system_path)|
+    action "Updating #{system_path}", "cp #{local_path} #{system_path}"
+  end
+end
+
+def update_scripts
+  action "Installing 'gh-pr'", "curl -sL 'https://raw.githubusercontent.com/rastasheep/dotfiles/master/bin/gh-pr' -o ~/bin/gh-pr && chmod +x ~/bin/gh-pr"
+end
+
+def update
+  create_base_dirs
+  backup
+
+  puts "\n"
+  update_dotfiles
+
+  puts "\n"
+  update_scripts
+
+  puts "\n"
+  puts "Dotfiles updated"
+end
+
+update
