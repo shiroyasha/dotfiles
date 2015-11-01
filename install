@@ -1,16 +1,13 @@
 #!/usr/bin/env ruby
 
+$script_path = File.dirname(__FILE__)
+
 $dotfiles = [
   "tmux.conf",
   "vimrc",
   "gitconfig",
   "aliases"
 ]
-
-def create_base_dirs
-  `mkdir -p ~/bin`
-  `mkdir -p ~/code`
-end
 
 def action(title, command)
   print title
@@ -22,6 +19,12 @@ def action(title, command)
   puts " #{mark}"
 end
 
+def create_base_dirs
+  ["~/bin", "~/code"].each do |dir|
+    action "Creating #{dir}", "mkdir -p #{dir}"
+  end
+end
+
 def backup
   file_paths = $dotfiles.map { |file| "~/.#{file}" } .select { |file| `test -f #{file}` && $?.exitstatus == 0 }
 
@@ -30,41 +33,27 @@ def backup
   end
 end
 
-def script_path
-  File.dirname(__FILE__)
-end
-
 def update_dotfiles
-  path_pairs = $dotfiles.map { |file| ["#{script_path}/#{file}", "~/.#{file}"] }
+  path_pairs = $dotfiles.map { |file| ["#{$script_path}/#{file}", "~/.#{file}"] }
 
   path_pairs.each do |(local_path, system_path)|
     action "Updating #{system_path}", "cp #{local_path} #{system_path}"
   end
 end
 
-def update_scripts
-  action "Installing 'gh-pr'", "curl -sL 'https://raw.githubusercontent.com/rastasheep/dotfiles/master/bin/gh-pr' -o ~/bin/gh-pr && chmod +x ~/bin/gh-pr"
-end
+backup
 
-def install_shell_aliases
-  action "Install shell aliases", "grep '~/.aliases' ~/.zshrc || echo 'source ~/.aliases' >> ~/.zshrc"
-end
+puts "\n"
+create_base_dirs
 
-def update
-  create_base_dirs
-  backup
+puts "\n"
+update_dotfiles
 
-  puts "\n"
-  update_dotfiles
+puts "\n"
+action "Installing 'gh-pr'", "curl -sL 'https://raw.githubusercontent.com/rastasheep/dotfiles/master/bin/gh-pr' -o ~/bin/gh-pr && chmod +x ~/bin/gh-pr"
 
-  puts "\n"
-  update_scripts
+puts "\n"
+action "Install shell aliases", "grep '~/.aliases' ~/.zshrc || echo 'source ~/.aliases' >> ~/.zshrc"
 
-  puts "\n"
-  install_shell_aliases
-
-  puts "\n"
-  puts "Dotfiles updated"
-end
-
-update
+puts "\n"
+puts "Dotfiles updated"
