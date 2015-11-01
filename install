@@ -12,20 +12,12 @@ def create_base_dirs
   `mkdir -p ~/code`
 end
 
-def checkmark
-  "\e[32m✓\e[0m"
-end
-
-def xmark
-  "\e[31m✗\e[0m"
-end
-
 def action(title, command)
   print title
 
   `#{command}`
 
-  mark = $?.exitstatus == 0 ? checkmark : xmark
+  mark = $?.exitstatus == 0 ? "\e[32m✓\e[0m" : "\e[31m✗\e[0m"
 
   puts " #{mark}"
 end
