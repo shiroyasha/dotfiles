@@ -54,6 +54,10 @@ def update_scripts
   action "Installing 'gh-pr'", "curl -sL 'https://raw.githubusercontent.com/rastasheep/dotfiles/master/bin/gh-pr' -o ~/bin/gh-pr && chmod +x ~/bin/gh-pr"
 end
 
+def install_shell_aliases
+  action "Install shell aliases", "grep '~/.aliases' ~/.zshrc || echo 'source ~/.aliases' >> ~/.zshrc"
+end
+
 def update
   create_base_dirs
   backup
@@ -63,6 +67,9 @@ def update
 
   puts "\n"
   update_scripts
+
+  puts "\n"
+  install_shell_aliases
 
   puts "\n"
   puts "Dotfiles updated"
