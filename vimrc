@@ -36,6 +36,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/vim-powerline'
+Plugin 'elixir-lang/vim-elixir'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
