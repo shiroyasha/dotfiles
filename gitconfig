@@ -10,6 +10,7 @@
   all   = add -A
   st    = status -sb
   ci    = commit
+  cia   = commit -am
   ca    = commit --amend
   br    = branch
   co    = checkout
