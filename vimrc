@@ -63,6 +63,9 @@ let g:neocomplcache_enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplcache_min_syntax_length = 2
 
+" Switch to alternate file
+nnoremap <space><space> <c-^>
+
 " Start BufExplorer
 nnoremap <silent><leader>q :BufExplorer<CR>
 nnoremap <silent><leader>s :A<CR>
