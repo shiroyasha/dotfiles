@@ -12,7 +12,7 @@ $dotfiles = [
 def action(title, command)
   print title
 
-  `#{command}`
+  system(command)
 
   mark = $?.exitstatus == 0 ? "\e[32m✓\e[0m" : "\e[31m✗\e[0m"
 
@@ -54,6 +54,9 @@ action "Installing 'gh-pr'", "curl -sL 'https://raw.githubusercontent.com/rastas
 
 puts "\n"
 action "Install shell aliases", "grep '~/.aliases' ~/.zshrc || echo 'source ~/.aliases' >> ~/.zshrc"
+
+puts "\n"
+action "Install goku", 'sudo su -lc "source /etc/profile && gem install goku --verbose" rbenv'
 
 puts "\n"
 puts "Dotfiles updated"
