@@ -16,7 +16,7 @@
   co    = checkout
   df    = diff
   dfc   = diff --cached
-  lg    = log --pretty=format:'%C(yellow)%h%Creset %Cgreen(%><(12)%cr%><|(12))%Creset - %s %C(blue)<%an>%Creset'
+  lg    = !git --no-pager log --pretty=format:'%C(yellow)%h%Creset %Cgreen(%><(12)%cr%><|(12))%Creset - %s %C(blue)<%an>%Creset' -10
   pl    = pull
   ps    = push
   undo  = reset --soft HEAD^
