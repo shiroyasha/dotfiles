@@ -5,3 +5,6 @@ alias dot="cd ~/dotfiles && ./install && cd -"
 alias grp="grep -rni"
 alias infra="bundle exec inframan"
 alias mmm="mix deps.get && mix deps.compile"
+
+alias v="nvim"
+alias vim="nvim"
