@@ -1,10 +1,18 @@
+# rails
 alias be="bundle exec"
 alias bi="bundle install --path vendor/bundle"
 alias pewpew="bundle exec rake db:migrate db:test:prepare"
+
+# dotfiles
 alias dot="cd ~/dotfiles && ./install && cd -"
+
+# generic
+alias v="vim"
 alias grp="grep -rni"
 alias infra="bundle exec inframan"
-alias mmm="mix deps.get && mix deps.compile"
+alias password="openssl rand -base64 32"
 
-alias v="nvim"
-alias vim="nvim"
+# elixir
+alias mmm="mix deps.get && mix deps.compile"
+alias ii="iex -S mix"
+
