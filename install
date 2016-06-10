@@ -49,8 +49,8 @@ create_base_dirs
 puts "\n"
 update_dotfiles
 
-puts "\n"
-action "Installing 'gh-pr'", "curl -sL 'https://raw.githubusercontent.com/rastasheep/dotfiles/master/bin/gh-pr' -o ~/bin/gh-pr && chmod +x ~/bin/gh-pr"
+# puts "\n"
+# action "Installing 'gh-pr'", "curl -sL 'https://raw.githubusercontent.com/rastasheep/dotfiles/master/bin/gh-pr' -o ~/bin/gh-pr && chmod +x ~/bin/gh-pr"
 
 puts "\n"
 action "Install shell aliases", "grep '~/.aliases' ~/.zshrc || echo 'source ~/.aliases' >> ~/.zshrc"
