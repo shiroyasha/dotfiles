@@ -37,6 +37,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'renderedtext/vim-elixir-alternative-files'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -69,6 +70,8 @@ nnoremap <space><space> <c-^>
 " Start BufExplorer
 nnoremap <silent><leader>q :BufExplorer<CR>
 nnoremap <silent><leader>s :A<CR>
+
+nnoremap <silent><leader>t :call ElixirAlternateFile()<cr>
 
 " Use vimfiler as default file browser
 let g:vimfiler_safe_mode_by_default = 0
