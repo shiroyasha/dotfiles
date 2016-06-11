@@ -1,0 +1,36 @@
+autoload -Uz colors && colors
+setopt prompt_subst
+
+function prompt_exit_status() {
+  if [ $? -eq 0 ]; then
+    echo "%{$fg_bold[green]%}»%{$reset_color%}"
+  else
+    echo "%{$fg_bold[red]%}»%{$reset_color%}"
+  fi
+}
+
+function prompt_git_branch() {
+  if [ -e "$PWD/.git" ]; then
+    local branch=$(git rev-parse --abbrev-ref HEAD)
+
+    if [[ $(git status) =~ "nothing to commit, working directory clean" ]]; then
+      echo -n "%{$fg_bold[green]%}($branch)%{$reset_color%}"
+    else
+      echo -n "%{$fg_bold[red]%}($branch)%{$reset_color%}"
+    fi
+  fi
+
+  echo " "
+}
+
+function prompt_directory() {
+  echo "%{$fg_bold[cyan]%}%c%{$reset_color%}"
+}
+
+function prompt_jobs() {
+  count=$( ( jobs ) | wc -l)
+
+  ((count)) && echo -n "{${count} hidden} "
+}
+
+export PROMPT='$(prompt_exit_status) $(prompt_directory) $(prompt_jobs)$(prompt_git_branch)'
