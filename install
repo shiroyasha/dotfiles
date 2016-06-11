@@ -1,62 +1,18 @@
 #!/usr/bin/env ruby
 
-$script_path = File.dirname(__FILE__)
+#
+# Create symlinks from dotfiles -> home directory
+#
+# for example:
+#
+# dotfiles/vimrc -> ~/.vimrc
+#
 
-$dotfiles = [
-  "tmux.conf",
-  "vimrc",
-  "gitconfig",
-  "aliases"
-]
+root = File.expand_path(File.dirname(__FILE__))
+dotfiles_path = File.join(root, "dotfiles")
 
-def action(title, command)
-  print title
+files = `ls #{dotfiles_path}`.split - [".", ".."]
 
-  system(command)
-
-  mark = $?.exitstatus == 0 ? "\e[32m✓\e[0m" : "\e[31m✗\e[0m"
-
-  puts " #{mark}"
+files.each do |file|
+  system("ln -sf '#{dotfiles_path}/#{file}' ~/.#{file}")
 end
-
-def create_base_dirs
-  ["~/bin", "~/code"].each do |dir|
-    action "Creating #{dir}", "mkdir -p #{dir}"
-  end
-end
-
-def backup
-  file_paths = $dotfiles.map { |file| "~/.#{file}" } .select { |file| `test -f #{file}` && $?.exitstatus == 0 }
-
-  file_paths.each do |file|
-    action "Creating backup #{file}.backup", "mv #{file} #{file}.backup"
-  end
-end
-
-def update_dotfiles
-  path_pairs = $dotfiles.map { |file| ["#{$script_path}/#{file}", "~/.#{file}"] }
-
-  path_pairs.each do |(local_path, system_path)|
-    action "Updating #{system_path}", "cp #{local_path} #{system_path}"
-  end
-end
-
-backup
-
-puts "\n"
-create_base_dirs
-
-puts "\n"
-update_dotfiles
-
-# puts "\n"
-# action "Installing 'gh-pr'", "curl -sL 'https://raw.githubusercontent.com/rastasheep/dotfiles/master/bin/gh-pr' -o ~/bin/gh-pr && chmod +x ~/bin/gh-pr"
-
-puts "\n"
-action "Install shell aliases", "grep '~/.aliases' ~/.zshrc || echo 'source ~/.aliases' >> ~/.zshrc"
-
-puts "\n"
-action "Install goku", 'sudo su -lc "source /etc/profile && gem install goku --verbose" rbenv'
-
-puts "\n"
-puts "Dotfiles updated"
