@@ -18,6 +18,7 @@ Plugin 'gmarik/vundle'
 Plugin 'shiroyasha/vim-sane-defaults'
 Plugin 'mileszs/ack.vim'
 Plugin 'renderedtext/vim-bdd'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
@@ -38,6 +39,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'renderedtext/vim-elixir-alternative-files'
+
+" markdown configuration
+let g:vim_markdown_folding_disabled = 1
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
