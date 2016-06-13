@@ -1,5 +1,13 @@
 export EDITOR="vim"
 export PATH=$PATH:$HOME/bin
 
+# history
+setopt inc_append_history
+setopt share_history
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_verify
+setopt extended_history
+
 source ~/.prompt
 source ~/.aliases
