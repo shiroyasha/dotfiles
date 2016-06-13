@@ -15,7 +15,9 @@
   br    = branch
   co    = checkout
   df    = diff
+  dff   = diff --name-only
   dfc   = diff --cached
+  dffc  = diff --name-only --cached
   lg    = !git --no-pager log --pretty=format:'%C(yellow)%h%Creset %Cgreen(%><(12)%cr%><|(12))%Creset - %s %C(blue)<%an>%Creset' -10
   pl    = pull
   ps    = push
@@ -32,4 +34,3 @@
 
 [core]
   editor = vim
-
