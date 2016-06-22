@@ -13,7 +13,8 @@ alias g="git"
 alias ls="ls --color=yes"
 alias ll="ls -lah"
 alias grp="grep -rni"
-alias infra="bundle exec inframan"
+alias infra="BUNDLE_GEMFILE=~/code/inframan/Gemfile bundle exec inframan"
+alias im="infra ecs"
 alias password="openssl rand -base64 32"
 
 # elixir
