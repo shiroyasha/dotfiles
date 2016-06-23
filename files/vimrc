@@ -39,6 +39,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'renderedtext/vim-elixir-alternative-files'
+Plugin 'bogado/file-line'
 
 " markdown configuration
 let g:vim_markdown_folding_disabled = 1
