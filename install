@@ -17,4 +17,4 @@ files.each do |file|
   system("ln -sf '#{dotfiles_path}/#{file}' ~/.#{file}")
 end
 
-system("ls -sf '#{root}/bin' ~/bin")
+system("ln -sf '#{root}/bin' ~/bin")
