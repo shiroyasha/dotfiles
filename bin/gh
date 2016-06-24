@@ -1,0 +1,101 @@
+#!/usr/bin/env bash
+
+# Git project menagment tool - v0.9
+#
+
+# GH uses the PROJECTS_PATH environment variable to determine
+# the location where you store your git projects. By default
+# this directory is $HOME/code but you can change it simply
+# by exporting another value:
+#
+#   export PROJECTS_PATH=$HOME/projects
+#
+[ -z "$PROJECTS_PATH" ] && PROJECTS_PATH="$HOME/code"
+
+# GH will create the projects directory if it doesn't exists
+#
+[ -d "$PROJECTS_PATH" ] || mkdir -p "$PROJECTS_PATH"
+
+# gh help
+#   Shows this help message
+#
+if [[ $1 == "help" ]]; then
+  export GREP_COLOR="01;32"
+  cat "$(dirname "$0")/gh" | grep -P "^#" | grep -vP "^#!" | cut -c 3- | grep -A100 -B100 --color -P "^gh .*"
+fi
+
+
+# gh status
+#   Shows the statuses of all local git projects
+#
+if [[ $1 == "status" ]]; then
+  for repo in $(ls "$PROJECTS_PATH" | sort); {
+    echo -e "\e[32m$repo \e[0m"
+
+    cd "$PROJECTS_PATH/$repo";
+    git status -sb;
+    echo -e ""
+    cd - > /dev/null;
+  }
+fi
+
+
+# gh clone
+#   Clone a project from github into your projects directory
+#   For example to clone Faraday(https://github.com/lostisland/faraday)
+#   type the following:
+#
+#     gh clone lostisland/faraday
+#
+if [[ $1 == "clone" ]]; then
+  full_repo_path=$2
+  repo=$(echo "$full_repo_path" | awk -F '/' '{ print $2}')
+
+  git clone "git@github.com:/$2.git" "$PROJECTS_PATH/$repo";
+fi
+
+# gh rm
+#   Removes a local git project from your projects directory
+#   For example to remove Faraday type the following:
+#
+#     gh rm faraday
+#
+if [[ $1 == "rm" ]]; then
+  echo -e "\e[31mRemoving\e[31m $PROJECTS_PATH/$repo ..."
+  cd ~
+  repo=$2
+  rm -rf "$PROJECTS_PATH/$repo"
+  echo "Project removed."
+fi
+
+# gh list
+#   Lists all your local git projects
+#
+if [[ $1 == "list" ]]; then
+  for repo in $(ls "$PROJECTS_PATH" | sort); {
+    cd "$PROJECTS_PATH/$repo";
+    remote=$(git remote -v | grep "fetch" | grep "origin" | awk '{ print $2 }')
+    echo "$repo -> $remote"
+    cd - > /dev/null;
+  }
+fi
+
+# gh exec
+#   Executes a bash command in every projects directory
+#   For example to count the number of files in each directory
+#   type the following
+#
+#     gh exec 'ls | wc -l'
+#
+if [[ $1 == "exec" ]]; then
+  for repo in $(ls "$PROJECTS_PATH" | sort); {
+    cd "$PROJECTS_PATH/$repo";
+    echo -e "\e[32m$repo \e[0m"
+    eval $2;
+    echo -e ""
+    cd - > /dev/null;
+  }
+fi
+
+# Written and maintained by Igor Sarcevic
+# Distrubuted under MIT Licence

@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+#/
+#/ Usage: gh-pr [<branch>]
+#/
+#/ Open the pull request page from current branch to <branch>, or 'master' if not
+#/ specified. Lands on the new pull request page when no PR exists yet.
+#/ Both branches must already be pushed to GitHub.
+set -e
+
+# Usage message
+if [ "$1" == "--help" -o "$1" == '-h' ]; then
+  grep ^#/ "$0" | cut -c4-
+  exit
+fi
+
+# This uses EDITOR as editor, or vi if EDITOR is null or unset
+EDITOR=${EDITOR:-vi}
+
+die() {
+  # die <string>
+  (($#)) && printf >&2 '%s\n' "$@"
+  exit 1
+}
+
+urlencode() {
+    # urlencode <string>
+    old_lc_collate=$LC_COLLATE
+    LC_COLLATE=C
+
+    local length="${#1}"
+    for (( i = 0; i < length; i++ )); do
+        local c="${1:i:1}"
+        case $c in
+            [a-zA-Z0-9.~_-]) printf "$c" ;;
+            *) printf '%%%02X' "'$c" ;;
+        esac
+    done
+
+    LC_COLLATE=$old_lc_collate
+}
+
+prData(){
+  local temp=$(mktemp) || die "Can't create temp file"
+  local ret_code
+  echo "$(git log -1 --pretty=%B)" > $temp
+
+  if "$EDITOR" -- "$temp" && [[ -s $temp ]]; then
+    content=$(< "$temp")
+    title=$(urlencode "$(head -n 1 "$temp")")
+    body=$(urlencode "$(tail -n +2 "$temp")")
+
+    ret_code=0
+  else
+    ret_code=1
+  fi
+  rm -f -- "$temp"
+  return "$ret_code"
+}
+
+# Run through all remotes looking for a github repository. Bail when found.
+remotes="origin $(git remote)"
+for remote in $remotes;
+do
+  git_url=$(git config remote."$remote".url || true)
+  case "$git_url" in
+    https://github.com/*)
+      url="$git_url"
+      break
+      ;;
+    git@github.com:*)
+      url=${git_url//git@github.com:/https:\/\/github.com\/}
+      break
+      ;;
+    git://github.com/*)
+      url=${git_url//git:\/\/github.com\//https:\/\/github.com\/}
+      break
+      ;;
+  esac
+done
+
+# No github.com remotes exists. Death.
+if [ -z "$url" ]; then
+  die "error: no github.com git remotes found"
+fi
+
+# Axe the .git suffix if there is one. Remove trailing slashes.
+url=${url/%.git/}
+url=${url/%\//}
+
+# figure out the branch
+branch=${1:-"master"}
+
+# check that the branch exists in the origin remote first
+if git rev-parse "refs/remotes/origin/$branch" 1>/dev/null 2>&1; then
+  current_branch=$(git branch | sed -n '/\* /s///p')
+
+  prData || die "Creating pull request aborted."
+
+  echo "$url/compare/$branch...$current_branch?expand=1&title=$title&body=$body"
+else
+  die "error: branch '$branch' does not exist on the origin remote. Try again after pushing the branch"
+fi
