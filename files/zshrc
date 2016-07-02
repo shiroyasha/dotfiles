@@ -10,5 +10,14 @@ setopt appendhistory     # Append history to the history file (no overwriting)
 setopt sharehistory      # Share history across terminals
 setopt incappendhistory  # Immediately append to the history file, not just when a term is killed
 
+function nth() {
+  line=$1
+
+  sed -n "${line}p"
+}
+
+alias first="nth 1"
+alias second="nth 2"
+
 source ~/.prompt
 source ~/.aliases
