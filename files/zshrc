@@ -16,6 +16,10 @@ function nth() {
   sed -n "${line}p"
 }
 
+function field() {
+  awk -F ' ' "{ print \$$1 }"
+}
+
 alias first="nth 1"
 alias second="nth 2"
 
