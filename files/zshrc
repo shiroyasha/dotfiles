@@ -25,3 +25,7 @@ alias second="nth 2"
 
 source ~/.prompt
 source ~/.aliases
+
+source ~/.kerl/installs/18.3/activate
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+kiex use 1.2.6
