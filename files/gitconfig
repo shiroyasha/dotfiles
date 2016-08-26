@@ -24,7 +24,7 @@
   purge = !git checkout master && git branch | grep -v "master" | xargs git branch -D
   amend = !git add -A && git commit --amend --no-edit
   files = diff --name-only origin/master
-  bootstrap =!git add . && git commit -m "Bootstrap"
+  bootstrap =!git init . && git add . && git commit -m "Bootstrap"
 
 [color]
   diff   = auto
