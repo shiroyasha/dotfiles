@@ -16,6 +16,7 @@ alias grp="grep -rni"
 alias infra="BUNDLE_GEMFILE=~/code/inframan/Gemfile bundle exec inframan"
 alias im="infra ecs"
 alias password="openssl rand -base64 32"
+alias code="cd ~/code"
 
 # elixir
 alias mmm="mix deps.get && mix deps.compile"
