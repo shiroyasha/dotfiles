@@ -40,6 +40,7 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'renderedtext/vim-elixir-alternative-files'
 Plugin 'bogado/file-line'
+Plugin 'fatih/vim-go'
 
 " markdown configuration
 let g:vim_markdown_folding_disabled = 1
@@ -77,6 +78,9 @@ nnoremap <silent><leader>q :BufExplorer<CR>
 nnoremap <silent><leader>s :A<CR>
 
 nnoremap <silent><leader>t :call ElixirAlternateFile()<cr>
+
+" make
+nnoremap <silent><leader>m :make!<cr>
 
 " Use vimfiler as default file browser
 let g:vimfiler_safe_mode_by_default = 0
