@@ -10,26 +10,11 @@ setopt appendhistory     # Append history to the history file (no overwriting)
 setopt sharehistory      # Share history across terminals
 setopt incappendhistory  # Immediately append to the history file, not just when a term is killed
 
-function nth() {
-  line=$1
-
-  sed -n "${line}p"
-}
-
-function field() {
-  awk -F ' ' "{ print \$$1 }"
-}
-
-alias first="nth 1"
-alias second="nth 2"
-
 source ~/.prompt
 source ~/.aliases
 
-<<<<<<< HEAD
-source ~/.kerl/installs/18.3/activate
-test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
-kiex use 1.2.6
-=======
-export GOPATH="$HOME/go-code"
->>>>>>> Add go
+if [ -d ~/.kerl ]; then
+  source ~/.kerl/installs/18.3/activate
+  test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+  kiex use 1.2.6
+fi
