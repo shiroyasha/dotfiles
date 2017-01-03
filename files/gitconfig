@@ -6,8 +6,7 @@
   default = current
 
 [alias]
-  a     = add
-  all   = add -A
+  a     = add --all
   st    = status -sb
   ci    = commit
   cia   = commit -am
