@@ -45,6 +45,9 @@ Plugin 'fatih/vim-go'
 " markdown configuration
 let g:vim_markdown_folding_disabled = 1
 
+" paste mode on off
+nnoremap <silent><leader><leader> :call Paste_on_off()<CR>
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -94,3 +97,8 @@ let g:gitgutter_signs = 1            " Activate gutter signs
 colorscheme desert
 hi VertSplit ctermbg=White ctermfg=Black
 hi NonText ctermfg=Black ctermbg=Black
+
+" sync clipboards
+set clipboard=unnamedplus
+
+nnoremap <silent><leader>ee :!clear && elixir %<cr>
