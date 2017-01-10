@@ -25,6 +25,7 @@
   amend = !git add -A && git commit --amend --no-edit
   files = diff --name-only origin/master
   bootstrap =!git init . && git add . && git commit -m "Bootstrap"
+  sync = !git pull origin master && git push shiroyasha master
 
 [color]
   diff   = auto
