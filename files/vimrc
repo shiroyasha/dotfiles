@@ -97,6 +97,8 @@ let g:gitgutter_signs = 1            " Activate gutter signs
 colorscheme desert
 hi VertSplit ctermbg=White ctermfg=Black
 hi NonText ctermfg=Black ctermbg=Black
+hi Search ctermfg=Black
+hi SpellBad ctermfg=Black ctermbg=Red
 
 " sync clipboards
 set clipboard=unnamedplus
