@@ -101,9 +101,9 @@ set bg=dark
 
 augroup MyColors
   autocmd!
-  autocmd ColorScheme * hi VertSplit ctermbg=White ctermfg=Black
-  autocmd ColorScheme * hi Search ctermfg=Black
-  autocmd ColorScheme * hi SpellBad ctermfg=Black ctermbg=Red
+  autocmd ColorScheme desert hi VertSplit ctermbg=White ctermfg=Black
+  autocmd ColorScheme desert hi Search ctermfg=Black
+  autocmd ColorScheme desert hi SpellBad ctermfg=Black ctermbg=Red
 augroup end
 
 " sync clipboards
