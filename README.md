@@ -2,7 +2,7 @@
 
 Simple, no bullshit, dotfiles.
 
-![Shiroyasha dotfiles screenshot](screenshot.jpg)
+![Shiroyasha dotfiles screenshot](screenshot.png)
 
 ### Requirments
 
