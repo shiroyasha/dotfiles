@@ -42,6 +42,7 @@ Plugin 'renderedtext/vim-elixir-alternative-files'
 Plugin 'bogado/file-line'
 Plugin 'fatih/vim-go'
 Plugin 'isRuslan/vim-es6'
+Plugin 'beloglazov/vim-online-thesaurus'
 
 " markdown configuration
 let g:vim_markdown_folding_disabled = 1
