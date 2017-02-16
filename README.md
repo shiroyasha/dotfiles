@@ -2,19 +2,31 @@
 
 Simple, no bullshit, dotfiles.
 
-1. Nice colors
+### Nice colors (256 color based)
 
 ![Shiroyasha dotfiles screenshot](screenshot.png)
 
-2. Simple splits
+- Branch status indicator
+- Exit status indicator
+- Directory name indicator
+- Branch name indicator
 
-![Shiroyasha dotfiles screenshot](screenshot.png)
+### Simple tmux based splits
 
-## Requirments
+![Shiroyasha dotfiles screenshot](splits.png)
 
-- zsh
-- vundle
-- tmux
+Tmux shortcuts:
+
+- Alt + w: new window
+- Alt + s: new vertical split
+- Alt + S: new horizontal split
+
+- Alt + hjkl: split movement
+- Alt + u: Move to window on the left
+- Alt + i: Move to window on the right
+
+- Alt + <: Resize panel to left
+- Alt + >: Resize panel to right
 
 ## Installation
 
