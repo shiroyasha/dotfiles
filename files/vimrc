@@ -107,7 +107,4 @@ augroup MyColors
   autocmd ColorScheme desert hi SpellBad ctermfg=Black ctermbg=Red
 augroup end
 
-" sync clipboards
-set clipboard=unnamedplus
-
 nnoremap <silent><leader>ee :!clear && elixir %<cr>
