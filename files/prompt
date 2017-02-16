@@ -1,11 +1,16 @@
 autoload -Uz colors && colors
 setopt prompt_subst
 
+prompt_symbol="✲"
+green="%F{148}"
+red="%F{202}"
+directory="%F{226}"
+
 function prompt_exit_status() {
   if [ $? -eq 0 ]; then
-    echo "%{$fg_bold[green]%}»%{$reset_color%}"
+    echo "$green$prompt_symbol$reset_color%}"
   else
-    echo "%{$fg_bold[red]%}»%{$reset_color%}"
+    echo "$red$prompt_symbol%{$reset_color%}"
   fi
 }
 
@@ -14,9 +19,9 @@ function prompt_git_branch() {
     local branch=$(git rev-parse --abbrev-ref HEAD)
 
     if [[ $(git status) =~ "nothing to commit, working directory clean" ]]; then
-      echo -n "%{$fg_bold[green]%}($branch)%{$reset_color%}"
+      echo -n "$green($branch)%{$reset_color%}"
     else
-      echo -n "%{$fg_bold[red]%}($branch)%{$reset_color%}"
+      echo -n "$red($branch)%{$reset_color%}"
     fi
   fi
 
@@ -24,7 +29,7 @@ function prompt_git_branch() {
 }
 
 function prompt_directory() {
-  echo "%{$fg_bold[cyan]%}%c%{$reset_color%}"
+  echo "$directory%c%{$reset_color%}"
 }
 
 function prompt_jobs() {
