@@ -44,6 +44,7 @@ Plugin 'fatih/vim-go'
 Plugin 'isRuslan/vim-es6'
 Plugin 'beloglazov/vim-online-thesaurus'
 Plugin 'reedes/vim-wordy'
+Plugin 'mattn/emmet-vim'
 
 " markdown configuration
 let g:vim_markdown_folding_disabled = 1
