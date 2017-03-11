@@ -8,7 +8,7 @@ directory="%F{226}"
 
 function prompt_exit_status() {
   if [ $? -eq 0 ]; then
-    echo "$green$prompt_symbol$reset_color%}"
+    echo "$green$prompt_symbol%{$reset_color%}"
   else
     echo "$red$prompt_symbol%{$reset_color%}"
   fi
