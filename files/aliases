@@ -18,6 +18,7 @@ alias im="infra ecs"
 alias password="openssl rand -base64 32"
 alias code="cd ~/code"
 alias pr="hub pull-request"
+alias ccat="pygmentize -g"
 
 # elixir
 alias mmm="mix deps.get && mix deps.compile"
