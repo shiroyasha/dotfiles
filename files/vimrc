@@ -90,6 +90,10 @@ nnoremap <silent><leader>t :call ElixirAlternateFile()<cr>
 " make
 nnoremap <silent><leader>m :make!<cr>
 
+" rubocop reek
+nnoremap <silent><leader>rc :!bundle exec rubocop %<cr>
+nnoremap <silent><leader>rr :!bundle exec reek %<cr>
+
 " Use vimfiler as default file browser
 let g:vimfiler_safe_mode_by_default = 0
 let g:vimfiler_as_default_explorer = 1
