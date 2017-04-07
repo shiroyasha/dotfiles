@@ -26,6 +26,7 @@
   files = diff --name-only origin/master
   bootstrap =!git init . && git add . && git commit -m "Bootstrap"
   sync = !git pull origin master && git push shiroyasha master
+  fork = !hub fork && git config remote.pushDefault shiroyasha
 
 [color]
   diff   = auto
