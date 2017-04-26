@@ -30,7 +30,6 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimfiler.vim'
-Plugin 'Shougo/neocomplcache.vim'
 Plugin 'thisivan/vim-bufexplorer'
 Plugin 'gregsexton/MatchTag'
 Plugin 'kchmck/vim-coffee-script'
@@ -69,15 +68,6 @@ nnoremap F :Ack "\b<cword>\b" app lib spec features config<CR>
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 
-" Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
-
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 2
-
 " Switch to alternate file
 nnoremap <space><space> <c-^>
 
@@ -106,13 +96,9 @@ let g:gitgutter_signs = 1            " Activate gutter signs
 colorscheme desert
 
 syntax on
-set bg=dark
-
-augroup MyColors
-  autocmd!
-  autocmd ColorScheme desert hi VertSplit ctermbg=White ctermfg=Black
-  autocmd ColorScheme desert hi Search ctermfg=Black
-  autocmd ColorScheme desert hi SpellBad ctermfg=Black ctermbg=Red
-augroup end
 
 nnoremap <silent><leader>ee :!clear && elixir %<cr>
+
+"""""" GUI Options
+
+set guifont=Monaco:h14
