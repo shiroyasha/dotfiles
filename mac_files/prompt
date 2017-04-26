@@ -1,7 +1,7 @@
 autoload -Uz colors && colors
 setopt prompt_subst
 
-prompt_symbol="✲"
+prompt_symbol="⌘"
 green="%F{148}"
 red="%F{202}"
 directory="%F{226}"
@@ -40,4 +40,4 @@ function prompt_jobs() {
   ((count)) && echo -n "{${count} hidden} "
 }
 
-export PROMPT='(mac) $(prompt_exit_status) $(prompt_directory) $(prompt_jobs)$(prompt_git_branch)'
+export PROMPT='$(prompt_exit_status) $(prompt_directory) $(prompt_jobs)$(prompt_git_branch)'
