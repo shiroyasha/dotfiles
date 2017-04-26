@@ -9,12 +9,11 @@
 #
 
 root = File.expand_path(File.dirname(__FILE__))
-dotfiles_path = File.join(root, "files")
+
+dotfiles_path = File.join(root, (`uname -a` =~ /Darwin/ ? "mac_files" : "files"))
 
 files = `ls #{dotfiles_path}`.split - [".", ".."]
 
 files.each do |file|
   system("ln -sf '#{dotfiles_path}/#{file}' ~/.#{file}")
 end
-
-system("ln -sf '#{root}/bin' ~/bin")

@@ -1,0 +1,24 @@
+# rails
+alias be="bundle exec"
+alias bi="bundle install --path vendor/bundle"
+alias pewpew="bundle exec rake db:migrate db:test:prepare"
+
+# dotfiles
+alias dot="cd ~/dotfiles && ./install && cd -"
+
+# generic
+alias zz="source ~/.zshrc"
+alias v="vim"
+alias g="git"
+alias ll="ls -lah"
+alias grp="grep -rni"
+alias infra="BUNDLE_GEMFILE=~/code/inframan/Gemfile bundle exec inframan"
+alias im="infra ecs"
+alias password="openssl rand -base64 32"
+alias code="cd ~/code"
+alias pr="hub pull-request"
+alias ccat="pygmentize -g"
+
+# elixir
+alias mmm="mix deps.get && mix deps.compile"
+alias ii="iex -S mix"

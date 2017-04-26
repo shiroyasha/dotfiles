@@ -1,0 +1,43 @@
+autoload -Uz colors && colors
+setopt prompt_subst
+
+prompt_symbol="✲"
+green="%F{148}"
+red="%F{202}"
+directory="%F{226}"
+
+function prompt_exit_status() {
+  if [ $? -eq 0 ]; then
+    echo "$green$prompt_symbol%{$reset_color%}"
+  else
+    echo "$red$prompt_symbol%{$reset_color%}"
+  fi
+}
+
+function prompt_git_branch() {
+  if [ -e "$PWD/.git" ]; then
+    if git rev-parse HEAD &> /dev/null; then
+      local branch=$(git rev-parse --abbrev-ref HEAD)
+
+      if [[ $(git status) =~ "nothing to commit" ]]; then
+        echo -n "$green($branch)%{$reset_color%} "
+      else
+        echo -n "$red($branch)%{$reset_color%} "
+      fi
+    else
+      echo -n "${red}[EMPTY]%{$reset_color%} "
+    fi
+  fi
+}
+
+function prompt_directory() {
+  echo "$directory%c%{$reset_color%}"
+}
+
+function prompt_jobs() {
+  count=$( ( jobs ) | wc -l)
+
+  ((count)) && echo -n "{${count} hidden} "
+}
+
+export PROMPT='(mac) $(prompt_exit_status) $(prompt_directory) $(prompt_jobs)$(prompt_git_branch)'
