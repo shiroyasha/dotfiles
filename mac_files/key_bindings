@@ -1,0 +1,8 @@
+# Ctrl+R is search
+bindkey '^R' history-incremental-search-backward
+
+# fn + left arrow is beginning of the line
+bindkey '^[[1~' beginning-of-line
+
+# fn + right arrow is end of the line
+bindkey '^[[4~' end-of-line

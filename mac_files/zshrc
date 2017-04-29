@@ -9,24 +9,6 @@ setopt appendhistory     # Append history to the history file (no overwriting)
 setopt sharehistory      # Share history across terminals
 setopt incappendhistory  # Immediately append to the history file, not just when a term is killed
 
+source ~/.key_bindings
 source ~/.prompt
 source ~/.aliases
-
-if [ -d ~/.kerl ]; then
-  source ~/.kerl/installs/18.3/activate
-  test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
-  kiex use 1.2.6
-fi
-
-if [ -d $HOME/bin ]; then
-  export PATH=$PATH:$HOME/bin
-fi
-
-if [ -d $HOME/.gem.ruby/2.3.0 ]; then
-  export PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
-fi
-
-if [ -d $HOME/go-code ]; then
-  export GOPATH=$HOME/go-code
-  export PATH=$HOME/go-code/bin:$PATH
-fi
