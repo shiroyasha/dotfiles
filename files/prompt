@@ -37,7 +37,13 @@ function prompt_directory() {
 function prompt_jobs() {
   count=$( ( jobs ) | wc -l)
 
-  ((count)) && echo -n "{${count} hidden} "
+  ((count)) && echo -n "%F{250}[${count} hidden]%{$reset_color%} "
 }
 
-export PROMPT='$(prompt_exit_status) $(prompt_directory) $(prompt_jobs)$(prompt_git_branch)'
+function prompt_aws() {
+  if [ -f ~/.aws/credentials ] || [ -n "$AWS_ACCESS_KEY_ID" ]; then
+    echo -n "%F{200}[AWS-ACTIVE]%{$reset_color%} "
+  fi
+}
+
+export PROMPT='$(prompt_exit_status) $(prompt_directory) $(prompt_jobs)$(prompt_aws)$(prompt_git_branch)'

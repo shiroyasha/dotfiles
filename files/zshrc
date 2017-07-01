@@ -15,7 +15,7 @@ source ~/.aliases
 if [ -d ~/.kerl ]; then
   source ~/.kerl/installs/18.3/activate
   test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
-  kiex use 1.2.6
+  kiex use 1.2.6 > /dev/null
 fi
 
 if [ -d $HOME/bin ]; then
