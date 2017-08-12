@@ -27,3 +27,7 @@ alias kc="kubectl"
 # elixir
 alias mmm="mix deps.get && mix deps.compile"
 alias ii="iex -S mix"
+
+# aws
+alias aws-on="mv ~/.aws/credentials.bkp ~/.aws/credentials"
+alias aws-off="mv ~/.aws/credentials ~/.aws/credentials.bkp"
