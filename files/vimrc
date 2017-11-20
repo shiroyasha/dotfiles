@@ -40,12 +40,10 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'renderedtext/vim-elixir-alternative-files'
 Plugin 'bogado/file-line'
-Plugin 'fatih/vim-go'
 Plugin 'isRuslan/vim-es6'
 Plugin 'beloglazov/vim-online-thesaurus'
 Plugin 'reedes/vim-wordy'
 Plugin 'mattn/emmet-vim'
-Plugin 'shiroyasha/idiot-proof-vim-writes'
 Plugin 'lambdatoast/elm.vim'
 
 " markdown configuration
