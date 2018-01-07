@@ -41,3 +41,7 @@ cd ~/dotfiles
 
 ./install
 ```
+
+For vim setup visit:
+
+https://github.com/shiroyasha/neovimfiles
