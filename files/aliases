@@ -24,6 +24,8 @@ alias pr="hub pull-request"
 alias ccat="pygmentize -g"
 alias dc="docker-compose"
 alias kc="kubectl"
+alias ..="cd .."
+alias ...="cd ../.."
 
 # elixir
 alias mmm="mix deps.get && mix deps.compile"
