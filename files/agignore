@@ -1,0 +1,8 @@
+*.css
+*.scss
+log
+fixtures
+node_modules
+*.js
+public
+*.map
