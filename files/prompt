@@ -19,7 +19,7 @@ function prompt_git_branch() {
     if git rev-parse HEAD &> /dev/null; then
       local branch=$(git rev-parse --abbrev-ref HEAD)
 
-      if [[ $(git status) =~ "nothing to commit, working directory clean" ]]; then
+      if [[ $(git status) =~ "nothing to commit, working" ]]; then
         echo -n "$green($branch)%{$reset_color%} "
       else
         echo -n "$red($branch)%{$reset_color%} "
