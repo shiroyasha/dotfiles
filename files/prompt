@@ -46,4 +46,9 @@ function prompt_aws() {
   fi
 }
 
-export PROMPT='$(prompt_exit_status) $(prompt_directory) $(prompt_jobs)$(prompt_aws)$(prompt_git_branch)'
+function prompt_kubectl() {
+  echo -n "[k8s namespace: $KC_NAMESPACE] "
+}
+
+
+export PROMPT='$(prompt_exit_status) $(prompt_directory) $(prompt_jobs)$(prompt_aws)$(prompt_kubectl)$(prompt_git_branch)'
