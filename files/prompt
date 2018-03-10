@@ -1,3 +1,5 @@
+source ~/.kube-ps1
+
 autoload -Uz colors && colors
 setopt prompt_subst
 
@@ -51,4 +53,4 @@ function prompt_kubectl() {
 }
 
 
-export PROMPT='$(prompt_exit_status) $(prompt_directory) $(prompt_jobs)$(prompt_aws)$(prompt_kubectl)$(prompt_git_branch)'
+export PROMPT='$(prompt_exit_status) $(prompt_directory) $(prompt_jobs)$(prompt_aws)$(kube_ps1) $(prompt_git_branch)'
