@@ -23,7 +23,7 @@ alias code="cd ~/code"
 alias pr="hub pull-request"
 alias ccat="pygmentize -g"
 alias dc="docker-compose"
-alias kc="kubectl -n $KC_NAMESPACE"
+alias kc="kubectl"
 alias ..="cd .."
 alias ...="cd ../.."
 

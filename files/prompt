@@ -33,7 +33,8 @@ function prompt_git_branch() {
 }
 
 function prompt_directory() {
-  echo "$directory%c%{$reset_color%}"
+  echo "$directory%/%{$reset_color%}"
+
 }
 
 function prompt_jobs() {
