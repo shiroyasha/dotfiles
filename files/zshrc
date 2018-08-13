@@ -26,7 +26,6 @@ if [ -d $HOME/.gem/ruby/2.3.0 ]; then
   export PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
 fi
 
-if [ -d $HOME/go-code ]; then
-  export GOPATH=$HOME/go-code
-  export PATH=$HOME/go-code/bin:$PATH
-fi
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
