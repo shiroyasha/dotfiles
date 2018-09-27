@@ -29,3 +29,5 @@ fi
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+export PATH="$PATH:/opt/istio-1.0.0/bin"
+export GO111MODULE=on

@@ -59,6 +59,9 @@ function prompt_kubectl() {
   echo -n "[k8s namespace: $KC_NAMESPACE] "
 }
 
+function sem_context() {
+  echo -n "(\e[32msem\e[0m|\e[32m$(sem config get active-context))\e[0m "
+}
 
-export PROMPT='$(prompt_directory) $(prompt_jobs)$(prompt_aws)$(google_cloud)$(kube_ps1) $(prompt_git_branch)
+export PROMPT='$(prompt_directory) $(prompt_jobs)$(sem_context)$(prompt_aws)$(google_cloud)$(kube_ps1) $(prompt_git_branch)
 $(prompt_exit_status) '
