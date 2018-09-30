@@ -1,12 +1,10 @@
-source ~/.kube-ps1
-
 autoload -Uz colors && colors
 setopt prompt_subst
 
 prompt_symbol="✲"
-green="%F{148}"
-red="%F{202}"
-directory="%F{226}"
+green="%F{10}"
+red="%F{11}"
+promt_color="%F{11}"
 
 function prompt_exit_status() {
   if [ $? -eq 0 ]; then
@@ -33,8 +31,7 @@ function prompt_git_branch() {
 }
 
 function prompt_directory() {
-  echo "$directory%~%{$reset_color%}"
-
+  echo "$promt_color%~%{$reset_color%}"
 }
 
 function prompt_jobs() {
@@ -43,22 +40,4 @@ function prompt_jobs() {
   ((count)) && echo -n "%F{250}[${count} hidden]%{$reset_color%} "
 }
 
-function prompt_aws() {
-  if [ -f ~/.aws/credentials ] || [ -n "$AWS_ACCESS_KEY_ID" ]; then
-    echo -n "%F{200}[AWS-ACTIVE]%{$reset_color%} "
-  fi
-}
-
-function google_cloud() {
-  if [ -e ~/.config/gcloud ]; then
-    echo -n "(\e[36m☁\e[0m |\e[36m$(cat ~/.config/gcloud/configurations/config_$(cat ~/.config/gcloud/active_config) | grep "project" | awk '{ print $3 }'))\e[0m "
-  fi
-}
-
-function prompt_kubectl() {
-  echo -n "[k8s namespace: $KC_NAMESPACE] "
-}
-
-
-export PROMPT='$(prompt_directory) $(prompt_jobs)$(prompt_aws)$(google_cloud)$(kube_ps1) $(prompt_git_branch)
-$(prompt_exit_status) '
+export PROMPT='$(prompt_exit_status) $(prompt_directory) $(prompt_jobs)$(prompt_git_branch)'
