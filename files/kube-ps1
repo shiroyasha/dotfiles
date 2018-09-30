@@ -343,3 +343,5 @@ kube_ps1() {
 
   echo "${KUBE_PS1}"
 }
+
+kube_ps1
