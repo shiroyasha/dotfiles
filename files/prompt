@@ -3,7 +3,7 @@ setopt prompt_subst
 
 prompt_symbol="✲"
 green="%F{10}"
-red="%F{11}"
+red="%F{1}"
 promt_color="%F{11}"
 
 function prompt_exit_status() {
