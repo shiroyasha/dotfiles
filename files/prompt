@@ -2,7 +2,7 @@ autoload -Uz colors && colors
 setopt prompt_subst
 
 prompt_symbol="✲"
-green="%F{10}"
+green="%F{2}"
 red="%F{1}"
 promt_color="%F{11}"
 

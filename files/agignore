@@ -3,6 +3,7 @@
 log
 fixtures
 node_modules
-*.js
+dist
 public
+priv/static/js/app.js
 *.map

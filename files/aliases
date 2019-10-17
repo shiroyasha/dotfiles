@@ -34,3 +34,7 @@ alias ii="iex -S mix"
 # aws
 alias aws-on="mv ~/.aws/credentials.bkp ~/.aws/credentials"
 alias aws-off="mv ~/.aws/credentials ~/.aws/credentials.bkp"
+
+function kw() {
+  while true; do date; kubectl get pods | grep $1; echo; sleep 1; done
+}
