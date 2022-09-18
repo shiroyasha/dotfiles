@@ -53,3 +53,6 @@ bindkey '^r' history-incremental-search-backward
 test -e /home/vagrant/.iterm2_shell_integration.zsh && source /home/vagrant/.iterm2_shell_integration.zsh || true
 
 alias vim=nvim
+
+bindkey "^A" vi-beginning-of-line
+bindkey "^E" vi-end-of-line
