@@ -32,3 +32,24 @@ export PATH=$GOPATH/bin:$PATH
 export PATH=$GOROOT/bin:$PATH
 export PATH="$PATH:/opt/istio-1.0.3/bin"
 export GO111MODULE=on
+
+export GPG_TTY=$(tty)
+
+if [ -e ~/.gnupg/S.gpg-agent ]
+then
+  exit
+else
+  pkill gpg-agent
+  rm -f ~/.gpg-agent.env
+fi
+
+env=`gpg-agent --daemon --enable-ssh-support`
+if [ $?==0 ]
+then
+  echo "$env" > ~/.gpg-agent.env
+fi
+
+bindkey '^r' history-incremental-search-backward
+test -e /home/vagrant/.iterm2_shell_integration.zsh && source /home/vagrant/.iterm2_shell_integration.zsh || true
+
+alias vim=nvim

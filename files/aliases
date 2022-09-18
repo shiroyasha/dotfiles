@@ -7,7 +7,6 @@ alias pewpew="bundle exec rake db:migrate db:test:prepare"
 alias dot="cd ~/dotfiles && ./install && cd -"
 
 # generic
-alias vim="nvim"
 alias dc="docker-compose"
 alias zz="source ~/.zshrc"
 alias v="nvim"

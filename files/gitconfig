@@ -1,6 +1,10 @@
 [user]
   email = igor@renderedtext.com
   name = Igor Šarčević
+  signingkey = 0F0E1698A783524B
+
+[commit]
+  gpgSign = true
 
 [push]
   default = current
