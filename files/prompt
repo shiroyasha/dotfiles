@@ -40,4 +40,4 @@ function prompt_jobs() {
   ((count)) && echo -n "%F{250}[${count} hidden]%{$reset_color%} "
 }
 
-export PROMPT='$(prompt_exit_status) DEV $(prompt_directory) $(prompt_jobs)$(prompt_git_branch)'
+export PROMPT='$(prompt_exit_status) NEWDEV $(prompt_directory) $(prompt_jobs)$(prompt_git_branch)'

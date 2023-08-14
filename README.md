@@ -45,3 +45,51 @@ cd ~/dotfiles
 For vim setup visit:
 
 https://github.com/shiroyasha/neovimfiles
+
+## Installing languages
+
+ASDF:
+
+```bash
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.12.0
+```
+
+Node:
+
+``` bash
+sudo apt-get install build-essential
+
+asdf plugin add nodejs
+asdf list all nodejs
+asdf install nodejs 20.5.1
+asdf global nodejs 20.5.1
+```
+
+Ruby:
+
+``` bash
+sudo apt-get install libz-dev
+sudo apt-get install libyaml-dev
+
+asdf plugin add ruby
+asdf list all ruby | grep "3.2.0"
+asdf install ruby 3.2.0
+asdf global ruby 3.2.0
+
+gem install bundler
+gem update --system 3.4.18
+```
+
+## Export and import GPG keys
+
+```
+gpg --list-keys
+```
+
+```
+gpg --export-private-key -i <id> > private.key
+```
+
+```
+gpg --import private.key
+```
