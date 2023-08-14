@@ -35,13 +35,13 @@ export GO111MODULE=on
 
 export GPG_TTY=$(tty)
 
-if [ -e ~/.gnupg/S.gpg-agent ]
-then
-  exit
-else
-  pkill gpg-agent
-  rm -f ~/.gpg-agent.env
-fi
+# if [ -e ~/.gnupg/S.gpg-agent ]
+# then
+#   exit
+# else
+#   pkill gpg-agent
+#   rm -f ~/.gpg-agent.env
+# fi
 
 env=`gpg-agent --daemon --enable-ssh-support`
 if [ $?==0 ]
@@ -56,3 +56,20 @@ alias vim=nvim
 
 bindkey "^A" vi-beginning-of-line
 bindkey "^E" vi-end-of-line
+
+if [[ -n $TMUX ]]; then
+  _fix_ssh_agent_in_tmux () { 
+    if [[ ! -S $SSH_AUTH_SOCK ]]; then 
+      echo "Fixing ssh-agent in tmux..."
+      eval export $(tmux show-env | grep SSH_AUTH_SOCK); 
+    fi 
+  }
+
+  ssh ()   { _fix_ssh_agent_in_tmux; command ssh $@; }
+  scp ()   { _fix_ssh_agent_in_tmux; command scp $@; }
+  git ()   { _fix_ssh_agent_in_tmux; command git $@; }
+  g ()     { _fix_ssh_agent_in_tmux; command git $@; }
+  rsync () { _fix_ssh_agent_in_tmux; command rsync $@; }
+fi
+
+. /home/dev/.asdf/asdf.sh

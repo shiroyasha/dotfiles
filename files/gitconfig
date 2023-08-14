@@ -39,3 +39,5 @@
 
 [core]
   editor = vim
+[init]
+	defaultBranch = main
