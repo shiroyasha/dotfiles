@@ -107,3 +107,48 @@ gpg --export-private-key -i <id> > private.key
 ```
 gpg --import private.key
 ```
+
+## Forward GPG key over SSH
+
+Find paths on remote:
+
+```
+gpgconf --list-dirs agent-extra-socket
+```
+
+Find paths on local:
+
+```
+gpgconf --list-dirs agent-socket
+```
+
+Configure forwarding in ~/.ssh/config on the local machine:
+
+```
+Host remote
+  RemoteForward <remote socket> <local socket>
+```
+
+Copy the public key to the remote:
+
+```
+scp .gnupg/pubring.kbx <REMOTE>:~/.gnupg/
+```
+
+On remote, active the agent:
+
+```
+echo use-agent >> ~/.gnupg/gpg.conf
+```
+
+On remote, modify the server:
+
+```
+StreamLocalBindUnlink yes
+```
+
+Restart SSH server:
+
+```
+sudo service ssh restart
+```
