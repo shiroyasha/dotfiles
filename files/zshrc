@@ -43,11 +43,13 @@ export GPG_TTY=$(tty)
 #   rm -f ~/.gpg-agent.env
 # fi
 
-env=`gpg-agent --daemon --enable-ssh-support`
-if [ $?==0 ]
-then
-  echo "$env" > ~/.gpg-agent.env
-fi
+# env=`gpg-agent --daemon --enable-ssh-support`
+# if [ $?==0 ]
+# then
+#   echo "$env" > ~/.gpg-agent.env
+# fi
+
+gpgconf --create-socketdir
 
 bindkey '^r' history-incremental-search-backward
 test -e /home/vagrant/.iterm2_shell_integration.zsh && source /home/vagrant/.iterm2_shell_integration.zsh || true

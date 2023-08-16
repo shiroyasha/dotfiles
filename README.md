@@ -139,12 +139,20 @@ On remote, active the agent:
 
 ```
 echo use-agent >> ~/.gnupg/gpg.conf
+echo "extra-socket $HOME/.gnupg/S.gpg-agent.extra" >> ~/.gnupg/gpg.conf
 ```
 
 On remote, modify the server:
 
 ```
 StreamLocalBindUnlink yes
+```
+
+On remote, disable gpg-agent startup:
+
+```
+sudo systemctl --global mask gpg-agent.service gpg-agent.socket gpg-agent-ssh.socket gpg-agent-extra.socket gpg-agent-browser.socket
+killall gpg-agent
 ```
 
 Restart SSH server:
