@@ -34,7 +34,7 @@ Resizing:
 
 ## Installation
 
-``` bash
+```bash
 git clone https://github.com/shiroyasha/dotfiles ~/dotfiles
 
 cd ~/dotfiles
@@ -46,6 +46,14 @@ For vim setup visit:
 
 https://github.com/shiroyasha/neovimfiles
 
+## Installing neovim
+
+```
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt update
+sudo apt-get install neovim
+```
+
 ## Installing languages
 
 ASDF:
@@ -56,7 +64,7 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.12.0
 
 Node:
 
-``` bash
+```bash
 sudo apt-get install build-essential
 
 asdf plugin add nodejs
@@ -67,7 +75,7 @@ asdf global nodejs 20.5.1
 
 Ruby:
 
-``` bash
+```bash
 sudo apt-get install libz-dev
 sudo apt-get install libyaml-dev
 
