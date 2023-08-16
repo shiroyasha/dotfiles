@@ -49,10 +49,16 @@ https://github.com/shiroyasha/neovimfiles
 ## Installing neovim
 
 ```
-sudo add-apt-repository ppa:neovim-ppa/unstable
-sudo apt update
-sudo apt-get install neovim
+sudo apt-get install ninja-build gettext cmake unzip curl
+
+cd /tmp
+git clone https://github.com/neovim/neovim
+cd neovim
+git checkout v0.9.1
+sudo make install
 ```
+
+Takes around 60 secs to build and install.
 
 ## Installing languages
 
