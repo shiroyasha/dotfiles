@@ -15,11 +15,11 @@ function prompt_exit_status() {
 }
 
 function prompt_git_branch() {
-  if git rev-parse --is-inside-work-tree &> /dev/null 2>&1; then
-    if git rev-parse HEAD &> /dev/null; then
+  if git --no-optional-locks rev-parse --is-inside-work-tree &> /dev/null 2>&1; then
+    if git --no-optional-locks rev-parse HEAD &> /dev/null; then
       local branch=$(git rev-parse --abbrev-ref HEAD)
 
-      if [[ $(git status) =~ "nothing to commit, working" ]]; then
+      if [[ $(git --no-optional-locks status) =~ "nothing to commit, working" ]]; then
         echo -n "$green($branch)%{$reset_color%} "
       else
         echo -n "$red($branch)%{$reset_color%} "
