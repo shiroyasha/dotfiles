@@ -9,7 +9,6 @@ alias dot="cd ~/dotfiles && ./install && cd -"
 # generic
 alias dc="docker-compose"
 alias zz="source ~/.zshrc"
-alias v="nvim"
 alias ls="ls --color=yes"
 alias ll="ls -lah"
 alias infra="BUNDLE_GEMFILE=~/code/inframan/Gemfile bundle exec inframan"
