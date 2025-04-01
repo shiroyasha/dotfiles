@@ -1,7 +1,7 @@
 [user]
   email = igor@operately.com
   name = Igor Šarčević
-  signingkey = 55DBE2E2A39DBAF4
+  signingkey = 0E88E6201F5DD67C
 
 [format]
   signOff = true
