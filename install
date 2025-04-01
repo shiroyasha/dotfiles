@@ -10,7 +10,7 @@
 
 root = File.expand_path(File.dirname(__FILE__))
 
-dotfiles_path = File.join(root, (`uname -a` =~ /Darwin/ ? "mac_files" : "files"))
+dotfiles_path = File.join(root, "files")
 
 files = `ls #{dotfiles_path}`.split - [".", ".."]
 
