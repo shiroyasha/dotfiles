@@ -17,3 +17,5 @@ files = `ls #{dotfiles_path}`.split - [".", ".."]
 files.each do |file|
   system("ln -sf '#{dotfiles_path}/#{file}' ~/.#{file}")
 end
+
+system("brew install gh")
