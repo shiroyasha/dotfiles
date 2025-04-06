@@ -1,13 +1,9 @@
 [user]
   email = igor@operately.com
   name = Igor Šarčević
-  signingkey = 0E88E6201F5DD67C
 
 [format]
   signOff = true
-
-[commit]
-  gpgSign = true
 
 [push]
   default = current

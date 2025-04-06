@@ -19,3 +19,4 @@ files.each do |file|
 end
 
 system("brew install gh")
+system("brew install --cask ghostty")
