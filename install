@@ -1,22 +1,22 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env bash
 
-#
+# Install software
+
+brew install gh
+brew install --cask ghostty || true
+
 # Create symlinks from files -> home directory
-#
-# for example:
-#
-# files/vimrc -> ~/.vimrc
-#
 
-root = File.expand_path(File.dirname(__FILE__))
+ln -sf ~/dotfiles/files/agignore ~/.agignore
+ln -sf ~/dotfiles/files/aliases ~/.aliases
+ln -sf ~/dotfiles/files/gitconfig ~/.gitconfig
+ln -sf ~/dotfiles/files/hushlogin ~/.hushlogin
+ln -sf ~/dotfiles/files/kube-ps1 ~/.kube-ps1
+ln -sf ~/dotfiles/files/kube-tmux ~/.kube-tmux
+ln -sf ~/dotfiles/files/prompt ~/.prompt
+ln -sf ~/dotfiles/files/tmux.conf ~/.tmux.conf
+ln -sf ~/dotfiles/files/zshrc ~/.zshrc
 
-dotfiles_path = File.join(root, "files")
-
-files = `ls #{dotfiles_path}`.split - [".", ".."]
-
-files.each do |file|
-  system("ln -sf '#{dotfiles_path}/#{file}' ~/.#{file}")
-end
-
-system("brew install gh")
-system("brew install --cask ghostty")
+# Configure ghostty
+mkdir -p ~/.config/ghostty
+ln -sf files/ghostty ~/.config/ghostty/config
