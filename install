@@ -1,17 +1,6 @@
 #!/usr/bin/env bash
 
-# Install software
-
-# brew install gh
-# brew install --cask ghostty || true
-
-ln -sf ~/dotfiles/config/zshrc ~/.zshrc
-ln -sf ~/dotfiles/config/gitconfig ~/.gitconfig
-ln -sf ~/dotfiles/config/hushlogin ~/.hushlogin
-
-# Configure ghostty
-mkdir -p ~/.config/ghostty
-ln -sf ~/dotfiles/files/ghostty ~/.config/ghostty/config
-
-# Disable keyrepeat
-defaults write -g ApplePressAndHoldEnabled -bool false
+brew install gh
+brew install ripgrep
+brew install neovim
+brew install --cask ghostty || true

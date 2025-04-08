@@ -1,0 +1,2 @@
+export PATH="/opt/homebrew/bin:$PATH"
+export HOMEBREW_NO_AUTO_UPDATE=1

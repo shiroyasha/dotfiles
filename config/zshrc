@@ -1,10 +1,10 @@
 export EDITOR="vim"
-export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Set the default locale to UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+source ~/dotfiles/config/zsh/brew
 source ~/dotfiles/config/zsh/ps1
 source ~/dotfiles/config/zsh/hist
 source ~/dotfiles/config/zsh/aliases
