@@ -2,8 +2,8 @@
 
 # Install software
 
-brew install gh
-brew install --cask ghostty || true
+# brew install gh
+# brew install --cask ghostty || true
 
 # Create symlinks from files -> home directory
 
@@ -19,4 +19,4 @@ ln -sf ~/dotfiles/files/zshrc ~/.zshrc
 
 # Configure ghostty
 mkdir -p ~/.config/ghostty
-ln -sf files/ghostty ~/.config/ghostty/config
+ln -sf ~/dotfiles/files/ghostty ~/.config/ghostty/config

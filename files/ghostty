@@ -1,0 +1,14 @@
+#
+# Online configuration for Ghostty
+# https://ghostty.zerebos.com/
+#
+# Make sure to delete as it will take precedence over the default config:
+# $HOME/Library/Application\ Support/com.mitchellh.ghostty/config
+#
+
+font-thicken = true
+font-family = DroidSansMono Nerd Font
+font-size = 20
+
+# Run 'ghostty +list-themes' to choose a theme
+theme = ayu
