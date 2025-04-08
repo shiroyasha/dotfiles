@@ -5,17 +5,9 @@
 # brew install gh
 # brew install --cask ghostty || true
 
-# Create symlinks from files -> home directory
-
-ln -sf ~/dotfiles/files/agignore ~/.agignore
-ln -sf ~/dotfiles/files/aliases ~/.aliases
-ln -sf ~/dotfiles/files/gitconfig ~/.gitconfig
-ln -sf ~/dotfiles/files/hushlogin ~/.hushlogin
-ln -sf ~/dotfiles/files/kube-ps1 ~/.kube-ps1
-ln -sf ~/dotfiles/files/kube-tmux ~/.kube-tmux
-ln -sf ~/dotfiles/files/prompt ~/.prompt
-ln -sf ~/dotfiles/files/tmux.conf ~/.tmux.conf
-ln -sf ~/dotfiles/files/zshrc ~/.zshrc
+ln -sf ~/dotfiles/config/zshrc ~/.zshrc
+ln -sf ~/dotfiles/config/gitconfig ~/.gitconfig
+ln -sf ~/dotfiles/config/hushlogin ~/.hushlogin
 
 # Configure ghostty
 mkdir -p ~/.config/ghostty

@@ -1,0 +1,7 @@
+alias ls="ls --color=yes"
+alias ll="ls -lah"
+
+alias ..="cd .."
+alias ...="cd ../.."
+
+alias vim=nvim

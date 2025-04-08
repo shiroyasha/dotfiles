@@ -1,9 +1,0 @@
-*.css
-*.scss
-log
-fixtures
-node_modules
-dist
-public
-priv/static/js/app.js
-*.map
