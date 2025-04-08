@@ -12,3 +12,6 @@ ln -sf ~/dotfiles/config/hushlogin ~/.hushlogin
 # Configure ghostty
 mkdir -p ~/.config/ghostty
 ln -sf ~/dotfiles/files/ghostty ~/.config/ghostty/config
+
+# Disable keyrepeat
+defaults write -g ApplePressAndHoldEnabled -bool false
