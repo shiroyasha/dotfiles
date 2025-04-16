@@ -1,7 +1,8 @@
 {
   "terminal.integrated.fontSize": 14,
-
-  "editor.rulers": [120],
+  "editor.rulers": [
+    120
+  ],
   "editor.fontSize": 16,
   "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
@@ -38,10 +39,8 @@
   "editor.stickyScroll.enabled": false,
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
-
   "breadcrumbs.enabled": true,
   "terminal.integrated.defaultLocation": "editor",
-
   "workbench.colorTheme": "Quiet Light",
   "workbench.iconTheme": "vs-seti",
   "workbench.tree.indent": 16,
@@ -50,12 +49,10 @@
   "workbench.tips.enabled": false,
   "workbench.editor.showIcons": false,
   "workbench.activityBar.location": "top",
-  "workbench.editor.labelFormat": "medium",
-
-  "vim.leader" : " ",
+  "vim.leader": " ",
   "vim.normalModeKeyBindings": [],
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
-
+  },
+  "workbench.editor.labelFormat": "default"
 }
