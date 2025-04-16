@@ -48,6 +48,61 @@
         "key": "alt+cmd+right",
         "command": "-workbench.action.terminal.focusNextPane",
         "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+      "key": "alt+a",
+      "command": "-editor.action.accessibilityHelpConfigureAssignedKeybindings",
+      "when": "accessibilityHelpIsShown && accessibleViewHasAssignedKeybindings"
+    },
+    {
+      "key": "alt+c",
+      "command": "workbench.action.chat.openEditSession",
+      "when": "chatEditingParticipantRegistered && !chatSetupHidden && view != 'workbench.panel.chat.view.edits'"
+    },
+    {
+      "key": "shift+cmd+i",
+      "command": "-workbench.action.chat.openEditSession",
+      "when": "chatEditingParticipantRegistered && !chatSetupHidden && view != 'workbench.panel.chat.view.edits'"
+    },
+    {
+      "key": "alt+c",
+      "command": "workbench.panel.chatEditing",
+      "when": "workbench.panel.chat.view.edits.active"
+    },
+    {
+      "key": "shift+cmd+i",
+      "command": "-workbench.panel.chatEditing",
+      "when": "workbench.panel.chat.view.edits.active"
+    },
+    {
+      "key": "alt+p",
+      "command": "workbench.actions.view.problems",
+      "when": "workbench.panel.markers.view.active"
+    },
+    {
+      "key": "shift+cmd+m",
+      "command": "-workbench.actions.view.problems",
+      "when": "workbench.panel.markers.view.active"
+    },
+    {
+      "key": "alt+t",
+      "command": "workbench.action.terminal.toggleTerminal",
+      "when": "terminal.active"
+    },
+    {
+      "key": "ctrl+`",
+      "command": "-workbench.action.terminal.toggleTerminal",
+      "when": "terminal.active"
+    },
+    {
+      "key": "shift+alt+t",
+      "command": "workbench.action.terminal.new",
+      "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+      "key": "ctrl+shift+`",
+      "command": "-workbench.action.terminal.new",
+      "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
     }
 
 ]
