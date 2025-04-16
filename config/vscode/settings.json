@@ -35,10 +35,10 @@
   "workbench.tips.enabled": false,
   "workbench.editor.showIcons": false,
   "workbench.activityBar.location": "top",
-  "vim.leader": " ",
-  "vim.normalModeKeyBindings": [],
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.editor.labelFormat": "default"
+  // hide the top bar in vscode
+  "window.commandCenter": false,
+  "window.customTitleBarVisibility": "windowed"
 }
