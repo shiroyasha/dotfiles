@@ -1,7 +1,7 @@
 {
   "terminal.integrated.fontSize": 17,
 
-  "editor.rulers": [80, 100, 120],
+  "editor.rulers": [120],
   "editor.fontSize": 16,
   "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
@@ -14,21 +14,49 @@
   "editor.selectionHighlight": false,
   "editor.occurrencesHighlight": "off",
   "editor.formatOnSave": true,
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingQuotes": "never",
+  "editor.autoSurround": "never",
+  "editor.autoClosingOvertype": "never",
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.parameterHints.enabled": false,
+  "editor.tabCompletion": "on",
+  "editor.suggestSelection": "recentlyUsed",
+  "editor.quickSuggestions": {
+    "other": false,  // change to "true" to enable regular code suggetions
+    "comments": false,
+    "strings": false,
+  },
+  "editor.formatOnType": false,
+  "editor.inlineSuggest.enabled": false,
+  "editor.suggest.localityBonus": true,
+  "editor.lightbulb.enabled": "off",
+  "editor.detectIndentation": false,
+  "editor.guides.indentation": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
 
+  "breadcrumbs.enabled": false,
   "terminal.integrated.defaultLocation": "editor",
 
-  "workbench.iconTheme": null,
-  "workbench.tree.indent": 25,
+  "workbench.colorTheme": "Quiet Light",
+  "workbench.iconTheme": "vs-seti",
+  "workbench.tree.indent": 16,
   "workbench.tree.renderIndentGuides": "always",
   "workbench.panel.defaultLocation": "right",
+  "workbench.tips.enabled": false,
+  "workbench.editor.showIcons": false,
+  "workbench.activityBar.location": "top",
 
   "vim.leader" : " ",
   "vim.normalModeKeyBindings": [
     {
       "before": ["<leader>", "e"],
-      "commands": [
-          "workbench.view.explorer"
-      ]
+      "commands": ["workbench.view.explorer"]
     }
-  ]
+  ],
+
 }
