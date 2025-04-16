@@ -1,17 +1,20 @@
 #!/usr/bin/env bash
 
-# Install software
+# This scripts links configuration files from the dotfiles 
+# repository to the appropriate locations in the user's home 
+# directory.
 
-# brew install gh
-# brew install --cask ghostty || true
+# Disable press-and-hold for keys, necessary for properly functioning Vim and VsCode
+defaults write -g ApplePressAndHoldEnabled -bool false
 
 ln -sf ~/dotfiles/config/zshrc ~/.zshrc
 ln -sf ~/dotfiles/config/gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/config/hushlogin ~/.hushlogin
 
-# Configure ghostty
+# Set up VsCode settings
+ln -sf ~/dotfiles/config/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -sf ~/dotfiles/config/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+
+# Set up Ghostty settings
 mkdir -p ~/.config/ghostty
 ln -sf ~/dotfiles/config/ghostty ~/.config/ghostty/config
-
-# Disable keyrepeat
-defaults write -g ApplePressAndHoldEnabled -bool false

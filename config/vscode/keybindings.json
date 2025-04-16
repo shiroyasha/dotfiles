@@ -1,0 +1,53 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "cmd+=",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "cmd+=",
+        "command": "editor.action.fontZoomIn"
+    },
+    {
+        "key": "cmd+-",
+        "command": "editor.action.fontZoomOut"
+    },
+    {
+        "key": "cmd+-",
+        "command": "-workbench.action.zoomOut"
+    },
+    {
+        "key": "cmd+y",
+        "command": "workbench.action.createTerminalEditor"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.tasks.runTask",
+        "args": "run-current-test"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.tasks.runTask",
+        "args": "run-current-test-file"
+    },
+
+    { "key": "ctrl+h", "command": "workbench.action.navigateLeft", "when": "editorTextFocus" },
+    { "key": "ctrl+j", "command": "workbench.action.navigateDown", "when": "editorTextFocus" },
+    { "key": "ctrl+k", "command": "workbench.action.navigateUp", "when": "editorTextFocus" },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+cmd+left",
+        "command": "-workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "alt+cmd+right",
+        "command": "-workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    }
+
+]
