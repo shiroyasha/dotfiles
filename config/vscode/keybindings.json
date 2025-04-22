@@ -1,112 +1,132 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-    {
-        "key": "cmd+=",
-        "command": "-workbench.action.zoomIn"
-    },
-    {
-        "key": "cmd+=",
-        "command": "editor.action.fontZoomIn"
-    },
-    {
-        "key": "cmd+-",
-        "command": "editor.action.fontZoomOut"
-    },
-    {
-        "key": "cmd+-",
-        "command": "-workbench.action.zoomOut"
-    },
-    {
-        "key": "cmd+y",
-        "command": "workbench.action.createTerminalEditor"
-    },
-    {
-        "key": "ctrl+t",
-        "command": "workbench.action.tasks.runTask",
-        "args": "run-current-test"
-    },
-    {
-        "key": "ctrl+shift+t",
-        "command": "workbench.action.tasks.runTask",
-        "args": "run-current-test-file"
-    },
-
-    { "key": "ctrl+h", "command": "workbench.action.navigateLeft", "when": "editorTextFocus" },
-    { "key": "ctrl+j", "command": "workbench.action.navigateDown", "when": "editorTextFocus" },
-    { "key": "ctrl+k", "command": "workbench.action.navigateUp", "when": "editorTextFocus" },
-    {
-        "key": "ctrl+l",
-        "command": "workbench.action.navigateRight",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "alt+cmd+left",
-        "command": "-workbench.action.terminal.focusPreviousPane",
-        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-    },
-    {
-        "key": "alt+cmd+right",
-        "command": "-workbench.action.terminal.focusNextPane",
-        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-    },
-    {
-      "key": "alt+a",
-      "command": "-editor.action.accessibilityHelpConfigureAssignedKeybindings",
-      "when": "accessibilityHelpIsShown && accessibleViewHasAssignedKeybindings"
-    },
-    {
-      "key": "alt+c",
-      "command": "workbench.action.chat.openEditSession",
-      "when": "chatEditingParticipantRegistered && !chatSetupHidden && view != 'workbench.panel.chat.view.edits'"
-    },
-    {
-      "key": "shift+cmd+i",
-      "command": "-workbench.action.chat.openEditSession",
-      "when": "chatEditingParticipantRegistered && !chatSetupHidden && view != 'workbench.panel.chat.view.edits'"
-    },
-    {
-      "key": "alt+c",
-      "command": "workbench.panel.chatEditing",
-      "when": "workbench.panel.chat.view.edits.active"
-    },
-    {
-      "key": "shift+cmd+i",
-      "command": "-workbench.panel.chatEditing",
-      "when": "workbench.panel.chat.view.edits.active"
-    },
-    {
-      "key": "alt+p",
-      "command": "workbench.actions.view.problems",
-      "when": "workbench.panel.markers.view.active"
-    },
-    {
-      "key": "shift+cmd+m",
-      "command": "-workbench.actions.view.problems",
-      "when": "workbench.panel.markers.view.active"
-    },
-    {
-      "key": "alt+t",
-      "command": "workbench.action.terminal.toggleTerminal",
-      "when": "terminal.active"
-    },
-    {
-      "key": "ctrl+`",
-      "command": "-workbench.action.terminal.toggleTerminal",
-      "when": "terminal.active"
-    },
-    {
-      "key": "shift+alt+t",
-      "command": "workbench.action.terminal.new",
-      "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
-    },
-    {
-      "key": "ctrl+shift+`",
-      "command": "-workbench.action.terminal.new",
-      "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
-    },
-    {
-      "key": "cmd+o",
-      "command": "file-browser.open",
-    }
-
+  {
+    "key": "cmd+=",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "cmd+=",
+    "command": "editor.action.fontZoomIn"
+  },
+  {
+    "key": "cmd+-",
+    "command": "editor.action.fontZoomOut"
+  },
+  {
+    "key": "cmd+-",
+    "command": "-workbench.action.zoomOut"
+  },
+  {
+    "key": "cmd+y",
+    "command": "workbench.action.createTerminalEditor"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.tasks.runTask",
+    "args": "run-current-test"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.action.tasks.runTask",
+    "args": "run-current-test-file"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+cmd+left",
+    "command": "-workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "alt+cmd+right",
+    "command": "-workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "alt+a",
+    "command": "-editor.action.accessibilityHelpConfigureAssignedKeybindings",
+    "when": "accessibilityHelpIsShown && accessibleViewHasAssignedKeybindings"
+  },
+  {
+    "key": "alt+c",
+    "command": "workbench.action.chat.openEditSession",
+    "when": "chatEditingParticipantRegistered && !chatSetupHidden && view != 'workbench.panel.chat.view.edits'"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "-workbench.action.chat.openEditSession",
+    "when": "chatEditingParticipantRegistered && !chatSetupHidden && view != 'workbench.panel.chat.view.edits'"
+  },
+  {
+    "key": "alt+c",
+    "command": "workbench.panel.chatEditing",
+    "when": "workbench.panel.chat.view.edits.active"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "-workbench.panel.chatEditing",
+    "when": "workbench.panel.chat.view.edits.active"
+  },
+  {
+    "key": "alt+p",
+    "command": "workbench.actions.view.problems",
+    "when": "workbench.panel.markers.view.active"
+  },
+  {
+    "key": "shift+cmd+m",
+    "command": "-workbench.actions.view.problems",
+    "when": "workbench.panel.markers.view.active"
+  },
+  {
+    "key": "alt+t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "shift+alt+t",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "-workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "cmd+o",
+    "command": "file-browser.open",
+  },
+  {
+    "key": "cmd+[",
+    "command": "editor.action.marker.next",
+    "when": "editorFocus"
+  },
+  {
+    "key": "cmd+]",
+    "command": "editor.action.marker.prev",
+    "when": "editorFocus"
+  }
 ]
