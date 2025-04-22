@@ -103,6 +103,10 @@
       "key": "ctrl+shift+`",
       "command": "-workbench.action.terminal.new",
       "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+      "key": "cmd+o",
+      "command": "file-browser.open",
     }
 
 ]
