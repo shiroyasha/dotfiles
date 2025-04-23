@@ -1,19 +1,25 @@
 {
   "terminal.integrated.fontSize": 16,
-  "editor.rulers": [
-    120
-  ],
-  "editor.fontSize": 16,
+  //
+  // font and ligatures
   "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontLigatures": true,
+  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'cv02', 'cv29', 'ss08'",
+  "editor.fontSize": 16,
+  //
+  // guides and highlights
   "editor.guides.highlightActiveBracketPair": false,
+  "editor.renderLineHighlight": "gutter",
+  "editor.occurrencesHighlight": "off",
+  "editor.selectionHighlight": false,
   "editor.foldingHighlight": false,
   "editor.guides.highlightActiveIndentation": false,
   "editor.minimap.enabled": false,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.rulers": [
+    120
+  ],
   "editor.tabSize": 2,
-  "editor.renderLineHighlight": "gutter",
-  "editor.selectionHighlight": false,
-  "editor.occurrencesHighlight": "off",
   "editor.formatOnSave": true,
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingQuotes": "never",
@@ -23,8 +29,6 @@
   "editor.detectIndentation": false,
   "editor.guides.indentation": false,
   "editor.stickyScroll.enabled": false,
-  "editor.scrollbar.horizontal": "hidden",
-  "editor.scrollbar.vertical": "hidden",
   "breadcrumbs.enabled": true,
   "terminal.integrated.defaultLocation": "editor",
   "workbench.colorTheme": "Quiet Light",
