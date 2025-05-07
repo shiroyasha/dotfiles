@@ -21,6 +21,9 @@
   ],
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always",
+  },
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingQuotes": "never",
   "editor.autoSurround": "never",
@@ -46,5 +49,6 @@
   "window.commandCenter": false,
   "window.customTitleBarVisibility": "windowed",
   "javascript.preferences.importModuleSpecifier": "relative",
-  "typescript.preferences.importModuleSpecifier": "relative"
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "explorer.confirmDelete": false
 }
