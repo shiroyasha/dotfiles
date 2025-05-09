@@ -22,22 +22,18 @@
   {
     "key": "ctrl+h",
     "command": "workbench.action.navigateLeft",
-    "when": "editorTextFocus"
   },
   {
     "key": "ctrl+j",
     "command": "workbench.action.navigateDown",
-    "when": "editorTextFocus"
   },
   {
     "key": "ctrl+k",
     "command": "workbench.action.navigateUp",
-    "when": "editorTextFocus"
   },
   {
     "key": "ctrl+l",
     "command": "workbench.action.navigateRight",
-    "when": "editorTextFocus"
   },
   //
   // File Explorer
@@ -59,12 +55,12 @@
   {
     "key": "cmd+k t",
     "command": "workbench.action.tasks.runTask",
-    "args": "run-current-test"
+    "args": "Test Current Line"
   },
   {
     "key": "cmd+k shift+t",
     "command": "workbench.action.tasks.runTask",
-    "args": "run-current-test-file"
+    "args": "Test Current File"
   },
   {
     "key": "cmd+k c",

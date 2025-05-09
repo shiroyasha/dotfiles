@@ -33,7 +33,6 @@
   "editor.guides.indentation": false,
   "editor.stickyScroll.enabled": false,
   "breadcrumbs.enabled": true,
-  "terminal.integrated.defaultLocation": "editor",
   "workbench.colorTheme": "Quiet Light",
   "workbench.iconTheme": "vs-seti",
   "workbench.tree.indent": 16,
