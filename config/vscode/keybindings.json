@@ -34,6 +34,7 @@
   {
     "key": "ctrl+l",
     "command": "workbench.action.navigateRight",
+    "when": "editorFocus"
   },
   //
   // File Explorer

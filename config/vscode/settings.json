@@ -2,11 +2,13 @@
   "terminal.integrated.fontSize": 16,
   //
   // font and ligatures
+  //
   "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'cv02', 'cv29', 'ss08'",
   "editor.fontSize": 16,
   //
   // guides and highlights
+  //
   "editor.guides.highlightActiveBracketPair": false,
   "editor.renderLineHighlight": "gutter",
   "editor.occurrencesHighlight": "off",
@@ -44,10 +46,16 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  //
   // hide the top bar in vscode
+  //
   "window.commandCenter": false,
   "window.customTitleBarVisibility": "windowed",
   "javascript.preferences.importModuleSpecifier": "relative",
   "typescript.preferences.importModuleSpecifier": "relative",
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  //
+  // git
+  //
+  "git.autofetch": true
 }
