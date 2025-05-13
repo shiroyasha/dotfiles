@@ -97,5 +97,10 @@
   {
     "key": "shift+alt+a",
     "command": "alternate.alternateFileInSplit"
+  },
+  // disabled cmd+q to prevent accidental quitting
+  {
+    "key": "cmd+q",
+    "command": "-workbench.action.quit"
   }
 ]

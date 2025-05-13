@@ -57,5 +57,16 @@
   //
   // git
   //
-  "git.autofetch": true
+  "git.autofetch": true,
+  "[elixir]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.wordBasedSuggestions": "off",
+    "editor.formatOnType": true,
+    "editor.trimAutoWhitespace": false,
+    "editor.snippetSuggestions": "inline",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true
+  }
 }
