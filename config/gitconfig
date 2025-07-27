@@ -10,10 +10,9 @@
 
 [alias]
   a     = add --all
-  st    = status -sb
   ci    = commit -s
-  cia   = commit -am -s
-  ca    = commit --amend -s
+  ca    = commit -s --amend
+  st    = status -sb
   br    = !git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short) | %(committerdate:relative) | %(subject)' | head -n 10 | column -t -s '|'
   co    = checkout
   df    = diff
@@ -21,7 +20,8 @@
   lg    = !git --no-pager log --pretty=format:'%C(yellow)%h%Creset %Cgreen(%><(12)%cr%><|(12))%Creset - %s %C(blue)<%an>%Creset' -10
   pl    = pull
   ps    = push
-  sync = !git pull origin master && git push shiroyasha master
+  pr    = !"f() { source ~/dotfiles/config/zsh/git; git_pull_request; }; f"
+  sync  = !git pull origin master && git push shiroyasha master
 
 [color]
   diff   = auto
@@ -30,5 +30,6 @@
 
 [core]
   editor = vim
+
 [init]
 	defaultBranch = main

@@ -1,5 +1,5 @@
 {
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 15,
   //
   // font and ligatures
   //
@@ -18,13 +18,11 @@
   "editor.minimap.enabled": false,
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
-  "editor.rulers": [
-    120
-  ],
+  "editor.rulers": [120],
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "always",
+    "source.organizeImports": "always"
   },
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingQuotes": "never",
@@ -68,5 +66,11 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true
+  },
+  "elixirLS.suggestSpecs": false,
+  "terminal.integrated.tabs.enabled": false,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "files.associations": {
+    "*.mdx": "markdown"
   }
 }

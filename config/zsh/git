@@ -1,0 +1,47 @@
+#!/bin/zsh
+
+function git_save() {
+  if [ "$(git rev-parse --abbrev-ref HEAD)" = "main" ]; then
+    echo "You are on the main branch. Please switch to a feature branch before committing."
+    return 1
+  fi
+
+  if [ "$(git rev-parse --abbrev-ref HEAD)" = "master" ]; then
+    echo "You are on the master branch. Please switch to a feature branch before committing."
+    return 1
+  fi
+
+  if [ -z "$1" ]; then
+    echo "Usage: gs <commit message>"
+    return 1
+  fi
+
+  git add .
+  git commit -m "$1" -s
+  git push
+}
+
+function git_save_amend() {
+  if [ "$(git rev-parse --abbrev-ref HEAD)" = "main" ]; then
+    echo "You are on the main branch. Please switch to a feature branch before committing."
+    return 1
+  fi
+
+  if [ "$(git rev-parse --abbrev-ref HEAD)" = "master" ]; then
+    echo "You are on the master branch. Please switch to a feature branch before committing."
+    return 1
+  fi
+
+  if [ -z "$1" ]; then
+    echo "Usage: gsa <commit message>"
+    return 1
+  fi
+
+  git add .
+  git commit --amend -m "$1" -s
+  git push --force-with-lease
+}
+
+function git_pull_request() {
+  gh pr create -w
+}

@@ -54,32 +54,30 @@
   //   a = switch to alternate file
   //
   {
-    "key": "cmd+k t",
+    "key": "cmd+t",
     "command": "workbench.action.tasks.runTask",
     "args": "Test Current Line"
   },
   {
-    "key": "cmd+k shift+t",
+    "key": "cmd+shift+t",
     "command": "workbench.action.tasks.runTask",
     "args": "Test Current File"
   },
   {
-    "key": "cmd+k c",
+    "key": "cmd+shift+i",
     "command": "workbench.action.chat.toggle",
     "when": "chatEditingParticipantRegistered && !chatSetupHidden && view != 'workbench.panel.chat.view.edits'"
   },
   {
-    "key": "cmd+k p",
-    "command": "workbench.actions.view.problems",
-    "when": "workbench.panel.markers.view.active"
+    "key": "cmd+m",
+    "command": "workbench.actions.view.problems"
   },
   {
-    "key": "cmd+k s",
+    "key": "cmd+k",
     "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
   },
   {
-    "key": "cmd+k a",
+    "key": "cmd+a",
     "command": "alternate.alternateFile"
   },
   //
@@ -94,13 +92,35 @@
     "command": "editor.action.marker.prev",
     "when": "editorFocus"
   },
-  {
-    "key": "shift+alt+a",
-    "command": "alternate.alternateFileInSplit"
-  },
   // disabled cmd+q to prevent accidental quitting
   {
     "key": "cmd+q",
     "command": "-workbench.action.quit"
+  },
+  // Resize the panel
+  {
+    "key": "ctrl+cmd+h",
+    "command": "workbench.action.terminal.resizePaneLeft",
+    "when": "terminalHasBeenCreated || terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+cmd+l",
+    "command": "workbench.action.terminal.resizePaneRight",
+    "when": "terminalHasBeenCreated || terminalProcessSupported"
+  },
+  {
+    "key": "cmd+p",
+    "command": "workbench.action.chat.attachContext",
+    "when": "inChatInput && chatLocation == 'panel'"
+  },
+  {
+    "key": "ctrl+cmd+.",
+    "command": "editor.action.autoFix",
+    "when": "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)quickfix\\b/"
+  },
+  {
+    "key": "alt+cmd+.",
+    "command": "-editor.action.autoFix",
+    "when": "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)quickfix\\b/"
   }
 ]
