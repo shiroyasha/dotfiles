@@ -1,5 +1,5 @@
 {
-  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontSize": 14,
   //
   // font and ligatures
   //
@@ -33,7 +33,7 @@
   "editor.guides.indentation": false,
   "editor.stickyScroll.enabled": false,
   "breadcrumbs.enabled": true,
-  "workbench.colorTheme": "Quiet Light",
+  "workbench.colorTheme": "GitHub Light",
   "workbench.iconTheme": "vs-seti",
   "workbench.tree.indent": 16,
   "workbench.tree.renderIndentGuides": "always",
@@ -68,9 +68,40 @@
     "files.trimFinalNewlines": true
   },
   "elixirLS.suggestSpecs": false,
-  "terminal.integrated.tabs.enabled": false,
   "github.copilot.nextEditSuggestions.enabled": true,
   "files.associations": {
     "*.mdx": "markdown"
-  }
+  },
+  "gitTreeCompare.showCheckboxes": false,
+  "chat.agentSessionsViewLocation": "view",
+  "githubPullRequests.codingAgent.uiIntegration": true,
+  "githubPullRequests.terminalLinksHandler": "github",
+  "editor.accessibilitySupport": "off",
+  "chat.tools.terminal.autoApprove": {
+    "make test.mix FILE=test/operately_web/api/mutations/create_account_test.exs": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "make test.mix FILE=test/operately_web/api/invitations_test.exs": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "make test.mix FILE=test/features/invite_links_test.exs": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  },
+  "chatgpt.commentCodeLensEnabled": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "typescriptreact": true,
+    "elixir": false
+  },
+  "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.tabs.enabled": false,
+  "terminal.integrated.suggest.enabled": false,
+  "go.toolsManagement.autoUpdate": true
 }
