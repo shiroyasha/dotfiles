@@ -1,0 +1,32 @@
+decompress() {
+    local file="$1"
+    
+    # Check if argument provided
+    if [[ -z "$file" ]]; then
+        echo "Usage: decompress <file.tar.gz>"
+        return 1
+    fi
+    
+    # Check if file exists
+    if [[ ! -f "$file" ]]; then
+        echo "Error: File '$file' not found"
+        return 1
+    fi
+    
+    # Check if it's a tar.gz file
+    if [[ ! "$file" =~ \.(tar\.gz|tgz)$ ]]; then
+        echo "Error: '$file' is not a tar.gz file"
+        return 1
+    fi
+    
+    # Extract the archive
+    echo "Extracting $file..."
+    tar -xzf "$file" -v
+    
+    if [[ $? -eq 0 ]]; then
+        echo "Successfully extracted $file"
+    else
+        echo "Error extracting $file"
+        return 1
+    fi
+}

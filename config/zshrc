@@ -11,6 +11,7 @@ source ~/dotfiles/config/zsh/aliases
 source ~/dotfiles/config/zsh/autocmp
 source ~/dotfiles/config/zsh/keybindings
 source ~/dotfiles/config/zsh/git
+source ~/dotfiles/config/zsh/decompress
 
 export PATH="/Users/shiroyasha/.opencode/bin":$PATH
 export PATH="/Users/shiroyasha/zig:$PATH"
