@@ -21,3 +21,7 @@ if [ -f '/Users/shiroyasha/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/shir
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/shiroyasha/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shiroyasha/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/Users/shiroyasha/code/superplane/cli-next/bin:$PATH"
+
+alias co="gh pr checkout"

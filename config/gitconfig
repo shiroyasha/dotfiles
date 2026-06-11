@@ -22,6 +22,7 @@
   ps    = push
   pr    = !"f() { source ~/dotfiles/config/zsh/git; git_pull_request; }; f"
   sync  = !git pull origin master && git push shiroyasha master
+  files = diff --name-only origin/main
 
 [color]
   diff   = auto
