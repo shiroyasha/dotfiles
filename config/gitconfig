@@ -8,6 +8,9 @@
 [push]
   default = current
 
+[push]
+  autoSetupRemote = true
+
 [alias]
   a     = add --all
   ci    = commit -s
